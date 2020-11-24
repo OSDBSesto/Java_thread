@@ -9,14 +9,18 @@ package javathread;
  *
  * @author pogliani.mattia
  */
-public class JavaThread {
+public class Processo extends Thread {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Processo T1 = new Processo("T1");
-        Processo T2 = new Processo("T2");
+    private String s;
+
+    public Processo(String s) {
+        this.s = s;
+        this.start();
     }
-    
+
+    public void run() {
+        for (;;) {
+            System.out.println(s);
+        }
+    }
 }
